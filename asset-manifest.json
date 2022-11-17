@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/ColorPicker/static/css/main.7acaea2f.css",
-    "main.js": "/ColorPicker/static/js/main.07d3183d.js",
+    "main.css": "/ColorPicker/static/css/main.68f7858a.css",
+    "main.js": "/ColorPicker/static/js/main.d9b1e295.js",
     "index.html": "/ColorPicker/index.html",
-    "main.7acaea2f.css.map": "/ColorPicker/static/css/main.7acaea2f.css.map",
-    "main.07d3183d.js.map": "/ColorPicker/static/js/main.07d3183d.js.map"
+    "main.68f7858a.css.map": "/ColorPicker/static/css/main.68f7858a.css.map",
+    "main.d9b1e295.js.map": "/ColorPicker/static/js/main.d9b1e295.js.map"
   },
   "entrypoints": [
-    "static/css/main.7acaea2f.css",
-    "static/js/main.07d3183d.js"
+    "static/css/main.68f7858a.css",
+    "static/js/main.d9b1e295.js"
   ]
 }
