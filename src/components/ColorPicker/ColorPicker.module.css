@@ -1,27 +1,33 @@
 .ColorPicker {
-    display: flex;
+    display: block;
+    margin: 40px;
     min-width: 600px;
-    height: 150px;
-    margin-top: 100px;
-    justify-content: space-around;
-    align-items: center;
-    margin-left: auto;
-    margin-right: auto;
+    min-height: 150px;
+    padding: 20px;
+   
     border: 1px solid rgba(128, 128, 128, 0.5) ;
 }
 
 
 .ColorPicker__option {
-    display: block;
+    display: inline-block;
     width: 80px;
     height: 80px;
-    text-align: center;
+    margin-right: 20px;
     cursor: pointer;
     border-radius: 3%;
     border: none;
-    transition: transform linear 250ms;   
+    transition: transform linear 150ms;   
 }
 
 .ColorPicker__option__active {
-    transform: scale(1.1);
+    transform: scale(1.2);
+    
 }
+
+.ColorName {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+
