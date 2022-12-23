@@ -1,30 +1,41 @@
 import React from 'react';
 import css from './ColorPicker.module.css';
+// пакет для составления динамических классов в компоненте
+import classNames from 'classnames';
 
 class ColorPicker extends React.Component {
   state = {
     actOptionIdx: 0,
   };
 
-  // метод для получения активного активного индекса (при клике на кнопку)
+  // метод для получения  активного индекса (при клике на кнопку)
   setActiveIdx = index => {
     this.setState({ actOptionIdx: index });
   };
-
-  // создаем метод класса для добавления дополнительного класса
+  // МЕТОД ДОБАВЛЕНИЯ ДОПКЛАССА ЧЕРЕЗ ПАКЕТ classNames==========================================================
+  // вызываем ф-ю classNames и передаем в нее класс, который должен быть по умолчанию - как аргуметнт,
+  // после чего передаю обэект, в котором указываю динамические классы, которые добавляем в зависимости от условия
   makeOptionClassName = index => {
-    //1 - в переменную бросаем основной клас
-    const optionClasses = [css.ColorPicker__option];
-    //  2-   по условию, если индекс елемента на который мы нажимаем === actOptionIdx,
-    //  то в массив с основным классом пушим дополнительный: получакм
-    // новый массив[ColorPicker__option, ColorPicker__option__active]
-    if (index === this.state.actOptionIdx) {
-      optionClasses.push(css.ColorPicker__option__active);
-    }
-    // возвращаем из метода makeOptionClassName наши классы из массива optionClasses (разделив пробелом)
-    // например css.ColorPicker__option  css.ColorPicker__option__active
-    return optionClasses.join(' ');
+    return classNames(css.ColorPicker__option, {
+      [css.ColorPicker__option__active]: index === this.state.actOptionIdx,
+    });
   };
+
+  //  СТАРАЯ ВЕРСИЯ ДОБАВЛЕНИЯ ДОПКЛАССА НА ЕЛЕМЕНТ==============================================================
+  // создаем метод класса для добавления дополнительного класса
+  // makeOptionClassName = index => {
+  //   //1 - в переменную бросаем основной клас
+  //   const optionClasses = [css.ColorPicker__option];
+  //   //  2-   по условию, если индекс елемента на который мы нажимаем === actOptionIdx,
+  //   //  то в массив с основным классом пушим дополнительный: получаeм
+  //   // новый массив[ColorPicker__option, ColorPicker__option__active]
+  //   if (index === this.state.actOptionIdx) {
+  //     optionClasses.push(css.ColorPicker__option__active);
+  //   }
+  //   // возвращаем из метода makeOptionClassName наши классы из массива optionClasses (разделив пробелом)
+  //   // например css.ColorPicker__option  css.ColorPicker__option__active
+  //   return optionClasses.join(' ');
+  // };
 
   render() {
     // деструктуризируем пропсы, стейт, методы

@@ -17,11 +17,12 @@
     cursor: pointer;
     border-radius: 3%;
     border: none;
-    transition: transform linear 150ms;   
+    transition:  border-radius linear 200ms;   
+    
 }
 
 .ColorPicker__option__active {
-    transform: scale(1.2);
+    border-radius: 50%;
     
 }
 
